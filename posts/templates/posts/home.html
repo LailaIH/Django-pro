@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>Colleges Listing</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-9">
+        <div class="recent_joblist_wrap">
+            <div class="recent_joblist white-bg ">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        
+                    </div>
+                    <div class="col-md-6">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="job_lists m-0">
+
+
+            <div class="row">
+            {% for major in majors %}
+                <div class="col-lg-12 col-md-12">
+                    <div class="single_jobs white-bg d-flex justify-content-between">
+                        <div class="jobs_left d-flex align-items-center">
+                            <div class="thumb">
+                                <img src="#" alt="">
+                            </div>
+                            <div class="jobs_conetent">
+                                <a href="{% url 'uni:major_courses' major.id %}"><h4>{{major}}</h4></a>
+                                <div class="links_locat d-flex align-items-center">
+                                    <div class="location">
+                                        
+                                    </div>
+                                    <div class="location">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jobs_right">
+                            <div class="apply_now">
+                             <!--   <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a> -->
+                            </div>
+                            <div class="date">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %} 
+                </div>
+           </div>
+      </div>
+    </div>
+   </div>
+  </div>    
+
+
+
+<!-- <div class="col-lg-12 col-md-12">
+    <div class="single_jobs white-bg d-flex justify-content-between">
+        <div class="jobs_left d-flex align-items-center">
+            <div class="thumb">
+                <img src="#" alt="">
+            </div>
+            <div class="jobs_conetent">
+                {% for major in majors %}
+                   <a href="{% url 'uni:major_courses' major.id %}"><h4>{{major}}</h4></a>
+                   
+                {% endfor %}   --> 
+
+
+{% endblock body %} 
+      
+
+
+   <script>
+        $( function() {
+            $( "#slider-range" ).slider({
+                range: true,
+                min: 0,
+                max: 24600,
+                values: [ 750, 24600 ],
+                slide: function( event, ui ) {
+                    $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] +"/ Year" );
+                }
+            });
+            $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+                " - $" + $( "#slider-range" ).slider( "values", 1 ) + "/ Year");
+        } );
+        </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

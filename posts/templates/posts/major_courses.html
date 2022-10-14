@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    {% for course in courses %}
+
+        <div class="col-lg-12 col-md-12">
+            <div class="single_jobs white-bg d-flex justify-content-between">
+                <div class="jobs_left d-flex align-items-center">
+                    <div class="thumb">
+                        <img src="#" alt="">
+                    </div>
+                    <div class="jobs_conetent">
+                        <a href="{% url 'uni:course_detail' course.id %}"><h4>{{course}}</h4></a>
+                       
+                    </div>
+                </div> 
+                </div>
+                </div>
+                
+
+
+            
+
+
+
+
+         
+    {% endfor %}       
+
+
+    
+
+
+{% endblock body %}    

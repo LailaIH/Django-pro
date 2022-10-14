@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+
+    <body>
+      
+            <!-- bradcam_area  -->
+            <div class="bradcam_area bradcam_bg_1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="bradcam_text">
+                                <h3>{{course}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="job_details_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="job_details_header">
+                                <div class="single_jobs white-bg d-flex justify-content-between">
+                                    <div class="jobs_left d-flex align-items-center">
+                                        <div class="thumb">
+                                            <img src="#" alt="">
+                                        </div>
+                                        <div class="jobs_conetent">
+                                            <a href="{% url 'uni:course_detail' course.id %}"><h4>{{course.number}}</h4></a>
+                                            <div class="links_locat d-flex align-items-center">
+                                                <div class="location">
+                                                </div>
+                                                <div class="location">
+                                                    <p> By: <i></i>{{course.lecturer}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="jobs_right">
+                                        <div class="apply_now">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="descript_wrap white-bg">
+                                <div class="single_wrap">
+                                    <h4>Course Major</h4>
+                                    <p>{{course.major}}</p>
+                                </div>
+                                
+                            </div>
+
+
+
+                {% if current.major == course.major %}
+                       <form method="post">
+                       {% csrf_token %}
+                          <input type="submit" value="Add Course" name="add">
+                          <input type="submit" value="Delete Course" name="delete">
+                       </form> 
+                       {{mes}}        
+                {% endif %}      
+
+{% endblock body %}                            
