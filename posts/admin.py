@@ -8,4 +8,6 @@ admin.site.register(Lecturer)
 admin.site.register(Profile) 
 admin.site.register(StudentCourse) 
 
+#comment
+
 
